@@ -4,7 +4,7 @@
   "manifest_version": 3,
   "description": "Removes AI features from Search Engines.",
   "permissions": ["declarativeNetRequest", "scripting"],
-  "host_permissions": ["<all_urls>"],
+  "host_permissions": ["*://*.bing.com/*", "*://*.google.com/*", "*://*.duckduckgo.com/*"],
   "declarative_net_request": {
     "rule_resources": [{
       "id": "ruleset_1",
@@ -14,7 +14,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://www.bing.com/*"],
+      "matches": ["*://*.bing.com/*", "*://*.google.com/*", "*://*.duckduckgo.com/*"],
       "js": ["content.js"],
       "run_at": "document_idle"
     }
